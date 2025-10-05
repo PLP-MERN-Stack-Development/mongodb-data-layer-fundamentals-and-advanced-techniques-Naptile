@@ -4,7 +4,7 @@
 const { MongoClient } = require('mongodb');
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
-const uri = 'mongodb://localhost:27017';
+const uri = 'mongodb://localhost:27017/plp_bookstore';
 
 // Database and collection names
 const dbName = 'plp_bookstore';
@@ -131,6 +131,86 @@ const books = [
     in_stock: true,
     pages: 342,
     publisher: 'Thomas Cautley Newby'
+  },
+  {
+    title: 'The Picture of Dorian Gray',
+    author: 'Oscar Wilde',
+    genre: 'Philosophical Fiction',
+    published_year: 1890,
+    price: 11.99,
+    in_stock: true,
+    pages: 254,
+    publisher: "Lippincott's Monthly Magazine"
+  },
+  {
+    title: 'The Brothers Karamazov',
+    author: 'Fyodor Dostoevsky',
+    genre: 'Philosophical Fiction',
+    published_year: 1880,
+    price: 14.99,
+    in_stock: true,
+    pages: 796,
+    publisher: 'The Russian Messenger'
+  } ,
+  {
+    title: 'The Idiot',
+    author: 'Fyodor Dostoevsky',
+    genre: 'Philosophical Fiction',
+    published_year: 1869,
+    price: 13.99,
+    in_stock: true,
+    pages: 656,
+    publisher: 'The Russian Messenger'
+  },
+  {
+    title: 'Crime and Punishment',
+    author: 'Fyodor Dostoevsky',
+    genre: 'Philosophical Fiction',
+    published_year: 1866,
+    price: 15.99,
+    in_stock: true,
+    pages: 671,
+    publisher: 'The Russian Messenger'
+  },
+  {
+    title: 'Les Misérables',
+    author: 'Victor Hugo',
+    genre: 'Historical Fiction',
+    published_year: 1862,
+    price: 18.99,
+    in_stock: true,
+    pages: 1232,
+    publisher: 'A. Lacroix, Verboeckhoven & Cie'
+  },
+  {
+    title: 'War and Peace',
+    author: 'Leo Tolstoy',
+    genre: 'Historical Fiction',
+    published_year: 1869,
+    price: 19.99,
+    in_stock: true,
+    pages: 1225,
+    publisher: 'The Russian Messenger'
+  },
+  {
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    genre: 'Historical Fiction',
+    published_year: 1877,
+    price: 18.99,
+    in_stock: true,
+    pages: 864,
+    publisher: 'The Russian Messenger'
+  },
+  {
+    title: 'Don Quixote',
+    author: 'Miguel de Cervantes',
+    genre: 'Adventure',
+    published_year: 1605,
+    price: 16.99, 
+    in_stock: true,
+    pages: 863,
+    publisher: 'Francisco de Robles'
   }
 ];
 
@@ -177,22 +257,3 @@ async function insertBooks() {
 
 // Run the function
 insertBooks().catch(console.error);
-
-/*
- * Example MongoDB queries you can try after running this script:
- *
- * 1. Find all books:
- *    db.books.find()
- *
- * 2. Find books by a specific author:
- *    db.books.find({ author: "George Orwell" })
- *
- * 3. Find books published after 1950:
- *    db.books.find({ published_year: { $gt: 1950 } })
- *
- * 4. Find books in a specific genre:
- *    db.books.find({ genre: "Fiction" })
- *
- * 5. Find in-stock books:
- *    db.books.find({ in_stock: true })
- */ 
